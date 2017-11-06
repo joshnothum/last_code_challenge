@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var trolls = require('.routers/troll.controller.js')
+var trolls = require('./routers/troll.router.js');
 var port = process.env.PORT || 7000;
 
 /** ---------- MIDDLEWARE ---------- **/

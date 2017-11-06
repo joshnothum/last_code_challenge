@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 var TrollSchema = new Schema({ name: String, message: String });
 // Mongoose gives us an object that has properties we
 // can use to talk to the database.
-var Troll = mongoose.model('troll', RentSchema, 'trolls');
+var Troll = mongoose.model('troll', TrollSchema, 'trolls');
 
 router.post('/', function (req, res) {
     console.log(req.body);
@@ -22,3 +22,4 @@ router.post('/', function (req, res) {
     });//end of trollToAdd
     
 });//end of post
+module.exports = router;
