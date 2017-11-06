@@ -10,12 +10,24 @@
     <script type="text/javascript" src="vendors/jquery-3.2.1.min.js"></script>
 
     <script src="scripts/client.js"></script>
-    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/bootstrap.min.css">
     <title>Code Challenge</title>
 </head>
 
 <body>
-    <h1>Code Challenge</h1>
+<div class="container">
+    <form action="submit">
+        <div class="form-group">
+            <h1>Code Challenge</h1>
+            <label for="trollName">Troll Name:</label>
+            <input class="form-control" type="text" name="trollName" id="nameInput">
+            <label for="trollMessage">Troll Message:</label>
+            <input class="form-control" type="text" name="trollMessage" id="messageInput">
+            <button type="submit" class="btn btn-primary">Submit your trollery</button>
+        </div>
+    </form>
+</div>
 </body>
+</div>
 
 </html>
