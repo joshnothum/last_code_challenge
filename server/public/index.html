@@ -16,13 +16,13 @@
 
 <body ng-app="myApp">
 <div class="container"ng-controller="TrollController as troll">
-    <form action="submit">
+    <form ng-submit="troll.addTroll(troll.newTroll)">
         <div class="form-group">
             <h1>Code Challenge</h1>
             <label for="trollName">Troll Name:</label>
-            <input class="form-control" type="text" name="trollName" id="nameInput" ng-model="troll.name">
+            <input class="form-control" type="text" name="trollName" id="nameInput" ng-model="troll.newTroll.name">
             <label for="trollMessage">Troll Message:</label>
-            <input class="form-control" type="text" name="trollMessage" id="messageInput">
+            <input class="form-control" type="text" name="trollMessage" id="messageInput"ng-model="troll.newTroll.message">
             <button type="submit" class="btn btn-primary">Submit your trollery</button>
         </div>
     </form>
@@ -30,12 +30,13 @@
         {{7===7}}
         <div class="row">
             <div class="col-md-12">
-                <div class="well col-md-3">
-                    <p></p>
-                    <p></p>
+                <div class="well col-md-3" ng-repeat="troll in troll.allTrolls">
+                    <p>Name:{{troll.name}}</p>
+                    <p>Message:{{troll.message}}</p>
                     
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger" ng-click="troll.deleteTroll(troll._id)">Delete</button>
                 </div>
+                <button ng-click="troll.refreshTroll()">Refresh</button>
             </div>
         </div>
     </div>
