@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-
+var trolls = require('.routers/troll.controller.js')
 var port = process.env.PORT || 7000;
 
 /** ---------- MIDDLEWARE ---------- **/
@@ -9,7 +9,7 @@ app.use(bodyParser.json()); // needed for angular requests
 app.use(express.static('server/public'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-
+app.use('/troll', trolls);
 /** ---------- MONGOOSE ------------ **/
 var mongoose = require('mongoose');
 

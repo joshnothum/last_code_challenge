@@ -8,26 +8,38 @@
     <script type="text/javascript" src="vendors/angular.min.js"></script>
     <script src="vendors/angular-route.min.js"></script>
     <script type="text/javascript" src="vendors/jquery-3.2.1.min.js"></script>
-
-    <script src="scripts/client.js"></script>
+<script src="scripts/client.js"></script>
+    <script type="text/javascript" src="scripts/controllers/troll.controller.js"></script>
     <link rel="stylesheet" href="vendors/bootstrap.min.css">
     <title>Code Challenge</title>
 </head>
 
-<body>
-<div class="container">
+<body ng-app="myApp">
+<div class="container"ng-controller="TrollController as troll">
     <form action="submit">
         <div class="form-group">
             <h1>Code Challenge</h1>
             <label for="trollName">Troll Name:</label>
-            <input class="form-control" type="text" name="trollName" id="nameInput">
+            <input class="form-control" type="text" name="trollName" id="nameInput" ng-model="troll.name">
             <label for="trollMessage">Troll Message:</label>
             <input class="form-control" type="text" name="trollMessage" id="messageInput">
             <button type="submit" class="btn btn-primary">Submit your trollery</button>
         </div>
     </form>
+    <div>
+        {{7===7}}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well col-md-3">
+                    <p></p>
+                    <p></p>
+                    
+                    <button class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
-</div>
 
 </html>
